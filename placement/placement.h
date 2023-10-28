@@ -5,3 +5,5 @@
 #include <vector>
 #include<algorithm>
 #include<parser.h>
+#include<>
+void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize & die, int a, NumNets & numnets, int& minsum);
