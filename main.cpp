@@ -5,7 +5,9 @@
 #include <vector>
 #include<algorithm>
 #include<placement.h>
-#include<
+#include<database.h>
+#include<parser.h>
+#include<exporter.h>
 int main()
 {
     std::ifstream file("/home/spiderman/桌面/nihoz/test.txt");
