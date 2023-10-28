@@ -1,6 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <fstream>
 #include <string>
+#include <sstream>
+#include <vector>
+#include<algorithm>
+
 struct DieSize
 {
     int width;
@@ -16,7 +20,7 @@ struct NumInstances
 struct Net
 {
     int size;
-    std::vector<std::string> pins;
+    int pins[10];
 };
 
 struct NumNets
@@ -24,4 +28,3 @@ struct NumNets
     int size;
     Net* nets[3];
 };
-
