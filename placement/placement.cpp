@@ -1,7 +1,7 @@
-#include<placement.h>
-void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize & die, int a, NumNets & numnets, int& minsum)
+#include"placement.h"
+void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int a, NumNets& numnets, int& minsum)//传入数据，完成布局操作，并找到最优解写入文件
 {
-    
+
     if (a == 5)
     {
         int sum = 0;
@@ -34,7 +34,7 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize & die, in
                     }
                 }
                 sum += ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-                if (sum > minsum)
+                if (sum > minsum)//通过比较以完成减支的操作
                 {
                     return;
                 }
@@ -42,17 +42,17 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize & die, in
         }
         minsum = sum;
         bestgrathic = grathic;
-        ostream(bestgrathic);
+        ostream(bestgrathic);//调用函数，把结果写入txtwenjian
         return;
     }
-    for (int i = 0; i < die.width; i++)
+    for (int i = 0; i < die.width; i++)//使用递归的方法遍历全部布局情况
     {
         for (int j = 0; j < die.heigth; j++)
         {
             if (grathic[i][j] == 0)
             {
                 grathic[i][j] = a;
-                Calculate(bestgrathic,grathic,die, a + 1,numnets,minsum);
+                Calculate(bestgrathic, grathic, die, a + 1, numnets, minsum);
                 grathic[i][j] = 0;
             }
         }
