@@ -25,7 +25,5 @@ int main()
     int minsum = 1000;
     int bestgrathic[3][3] = { 0 };
     Calculate(bestgrathic, grathic, die, 1, numnets, minsum);
-    std::system("pause");
     return 0;
-	return 1;
 }
