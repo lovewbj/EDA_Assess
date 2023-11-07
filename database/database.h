@@ -1,4 +1,9 @@
-#pragma once
+#ifndef TEXT1_DATABASE_H
+#define TEXT1_DATABASE_H
+
+#include <vector>
+#include <iostream>
+#include <string>
 
 struct DieSize
 {
@@ -23,3 +28,4 @@ struct NumNets
     int size;
     Net* nets[3];
 };
+#endif //TEXT1_HHH_H

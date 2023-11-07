@@ -1,8 +1,8 @@
 #include"placement.h"
-void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int a, NumNets& numnets, int& minsum)//传入数据，完成布局操作，并找到最优解写入文件
+void Calculate(int bestgrathic[3][3], int grathic[3][3], DieSize& die, int a, NumNets& numnets, int& minsum,NumInstances instances)//传入数据，完成布局操作，并找到最优解写入文件
 {
 
-    if (a == 5)
+    if (a>instances.size)
     {
         int sum = 0;
         int x1 = 0;
@@ -17,9 +17,9 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int
             y2 = 0;
             for (int w = 1; w < (numnets.nets[q])->size; w++)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < die.width; i++)
                 {
-                    for (int j = 0; j < 3; j++)
+                    for (int j = 0; j < die.heigth; j++)
                     {
                         if (grathic[i][j] == (numnets.nets[q])->pins[w - 1])
                         {
@@ -34,7 +34,7 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int
                     }
                 }
                 sum += ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-                if (sum > minsum)//通过比较以完成减支的操作
+                if (sum >= minsum)//通过比较以完成减支的操作
                 {
                     return;
                 }
@@ -42,7 +42,7 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int
         }
         minsum = sum;
         bestgrathic = grathic;
-        ostream(bestgrathic);//调用函数，把结果写入txtwenjian
+        ostream(bestgrathic,die);//调用函数，把结果写入txtwenjian
         return;
     }
     for (int i = 0; i < die.width; i++)//使用递归的方法遍历全部布局情况
@@ -52,7 +52,7 @@ void Calculate(int bestgrathic[3][3], int grathic[3][3], const DieSize& die, int
             if (grathic[i][j] == 0)
             {
                 grathic[i][j] = a;
-                Calculate(bestgrathic, grathic, die, a + 1, numnets, minsum);
+                Calculate(bestgrathic, grathic, die, a + 1, numnets, minsum,instances);
                 grathic[i][j] = 0;
             }
         }

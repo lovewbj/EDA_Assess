@@ -1,11 +1,11 @@
+#include "database.h"
 #include "placement.h"
 #include "parser.h"
 #include "exporter.h"
-#include "database.h"
 
 int main()
 {
-    std::ifstream file("C:/Users/wangbenjie/Desktop/text.txt");
+    std::ifstream file("/home/spiderman/code/text1/test.txt");
     if (!file.is_open())
         return -1;
     DieSize die;
@@ -24,6 +24,6 @@ int main()
     int grathic[3][3] = { 0 };
     int minsum = 1000;
     int bestgrathic[3][3] = { 0 };
-    Calculate(bestgrathic, grathic, die, 1, numnets, minsum);
+    Calculate(bestgrathic, grathic, die, 1, numnets, minsum,instances);
     return 0;
 }

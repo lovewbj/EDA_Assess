@@ -49,7 +49,7 @@ void parseInstances(std::ifstream& ifs, NumInstances& instance)//利用寻找字
         }
     }
     std::string name = "Inst";
-    for (int i = 0; i < instance.size; i++)//找到数据的位置并取字串赋值
+    for(int i = 0; i < instance.size; i++)//找到数据的位置并取字串赋值
     {
         start = -1;
         getline(ifs, line);

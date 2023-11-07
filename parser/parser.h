@@ -1,3 +1,8 @@
+
+#ifndef TEXT1_PARSER_H
+#define TEXT1_PARSER_H
+
+#endif //TEXT1_PARSER_H
 #pragma once
 #include <iostream>
 #include <fstream>

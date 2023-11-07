@@ -1,0 +1,20 @@
+DieSize 3 3 # 可布局的行列数为3x3
+
+NumInstances 4 # 共有4个单元需要放置
+Inst C1 # 单元名称为C1，以此类推
+Inst C2
+Inst C3
+Inst C4
+
+NumNets 3 # 共有3个线网将上述的单元连接
+Net N1 3 # 第一个线网名称为N1，连接了3个单元
+Pin C1 # N1连接的第一个单元为C1
+Pin C2 # N1连接的第二个单元为C2
+Pin C3 # N1连接的第三个单元为C3
+Net N2 3
+Pin C1
+Pin C2
+Pin C3
+Net N3 2
+Pin C1
+Pin C4
