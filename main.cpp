@@ -5,7 +5,7 @@
 
 int main()
 {
-    std::ifstream file("/home/spiderman/code/text1/test.txt");
+    std::ifstream file("/home/spiderman/code/EDA_Assess/test.txt");
     if (!file.is_open())
         return -1;
     DieSize die;
@@ -14,16 +14,13 @@ int main()
     parseDie(file, die);
     NumInstances instances;
     parseInstances(file, instances);
-    Net N1, N2, N3;
+    Net net;
     NumNets numnets;
     parseNumNets(file, numnets);
-    parseNets(file, N1);
-    parseNets(file, N2);
-    parseNets(file, N3);
-    parseNumNet(&N1, &N2, &N3, numnets);
-    int grathic[3][3] = { 0 };
+    parseNets(file, net,numnets);
+    std::vector<std::vector<int>> grathic(die.width,std::vector<int>(die.heigth,0));
     int minsum = 1000;
-    int bestgrathic[3][3] = { 0 };
-    Calculate(bestgrathic, grathic, die, 1, numnets, minsum,instances);
+    std::vector<std::vector<int>> bestgrathic(die.width,std::vector<int>(die.heigth,0));
+    Calculate(bestgrathic, grathic, die, 1, numnets, minsum,instances,net);
     return 0;
 }

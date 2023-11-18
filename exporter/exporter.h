@@ -12,4 +12,4 @@
 #include<algorithm>
 #include"parser.h"
 #include"database.h"
-void ostream(int bestgrathic[3][3],DieSize& die);
+void ostream(std::vector<std::vector<int>>& bestgrathic,DieSize& die);

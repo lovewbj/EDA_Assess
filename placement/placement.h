@@ -12,4 +12,4 @@
 #include<algorithm>
 #include"parser.h"
 #include"exporter.h"
-void Calculate(int bestgrathic[3][3], int grathic[3][3], DieSize& die, int a, NumNets& numnets, int& minsum,NumInstances instances);
+void Calculate(std::vector<std::vector<int>>& bestgrathic,std::vector<std::vector<int>>& grathic, DieSize& die, int a, NumNets& numnets, int& minsum,NumInstances instances,Net& net);

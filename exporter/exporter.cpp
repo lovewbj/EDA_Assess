@@ -1,7 +1,7 @@
 #include "exporter.h"
-void ostream(int bestgrathic[3][3],DieSize& die)//把运行结果写入txt文件中
+void ostream(std::vector<std::vector<int>>& bestgrathic,DieSize& die)//把运行结果写入txt文件中
 {
-    std::ofstream ofs("/home/spiderman/code/text1/nihao.txt");
+    std::ofstream ofs("/home/spiderman/code/EDA_Assess/nihao.txt");
     for (int i = 0; i < die.width; i++)
     {
         for (int j = 0; j < die.heigth; j++)

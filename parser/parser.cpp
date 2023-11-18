@@ -86,20 +86,22 @@ void parseNumNets(std::ifstream& ifs, NumNets& numnets)
     ss >> num;
     numnets.size = std::stoi(num);
 }
-void parseNets(std::ifstream& ifs, Net& net)//由于txt里面的数据存放位置有一定规则，直接找规律存入数据
+void parseNets(std::ifstream& ifs, Net& net,NumNets& numnets)//由于txt里面的数据存放位置有一定规则，直接找规律存入数据
 {
     std::string line;
-    getline(ifs, line);
-    net.size = std::stoi(line.substr(7, 1));
-    for (int i = 0; i < net.size; i++)
+    for(int i =0;i<numnets.size;i++)
     {
-        getline(ifs, line);
-        net.pins[i] = std::stoi(line.substr(5, 1));
+        getline(ifs,line);
+        int num = std::stoi(line.substr(7,1));
+        std::vector<int> vv;
+        for(int j = 0;j < num;j++)
+        {
+            getline(ifs,line);
+            vv.push_back(std::stoi(line.substr(5,1)));
+        }
+        net.size.push_back(num);
+        net.pin.push_back(vv);
+        vv.clear();
     }
 }
-void parseNumNet(Net* net1, Net* net2, Net* net3, NumNets& numnets)
-{
-    numnets.nets[0] = net1;
-    numnets.nets[1] = net2;
-    numnets.nets[2] = net3;
-}
+

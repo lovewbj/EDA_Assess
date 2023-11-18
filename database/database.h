@@ -19,13 +19,12 @@ struct NumInstances
 
 struct Net
 {
-    int size;
-    int pins[10];
+    std::vector<int> size;
+    std::vector<std::vector<int>> pin;
 };
 
 struct NumNets
 {
     int size;
-    Net* nets[3];
 };
 #endif //TEXT1_HHH_H

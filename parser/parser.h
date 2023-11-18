@@ -15,5 +15,4 @@
 void parseDie(std::ifstream& ifs, DieSize& die);
 void parseInstances(std::ifstream& ifs, NumInstances& instance);
 void parseNumNets(std::ifstream& ifs, NumNets& numnets);
-void parseNets(std::ifstream& ifs, Net& net);
-void parseNumNet(Net* net1, Net* net2, Net* net3, NumNets& numnets);
+void parseNets(std::ifstream& ifs, Net& net,NumNets& numnets);

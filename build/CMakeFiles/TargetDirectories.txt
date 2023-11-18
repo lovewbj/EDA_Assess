@@ -1,0 +1,3 @@
+/home/spiderman/code/EDA_Assess/build/CMakeFiles/text1.dir
+/home/spiderman/code/EDA_Assess/build/CMakeFiles/edit_cache.dir
+/home/spiderman/code/EDA_Assess/build/CMakeFiles/rebuild_cache.dir
